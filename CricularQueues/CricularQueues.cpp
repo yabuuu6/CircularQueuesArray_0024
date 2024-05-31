@@ -23,4 +23,19 @@ public:
 			return;
 		}
 
-		
+		//Cek apakah antrian kosong
+		if (FRONT == -1) {
+			FRONT = 0;
+			REAR = 0;
+		}
+		else {
+			// Jika REAR berada di posisi trakhir array, kembali ke awal array
+			if (REAR == max - 1)
+				REAR = 0;
+			else
+				REAR = REAR + 1;
+		}
+		queue_array[REAR] = num;
+	}
+
+	
